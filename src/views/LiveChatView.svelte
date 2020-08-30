@@ -5,7 +5,7 @@
 
 	export let client, active;
 
-	const messageService = client.service('api/entries');
+	const messageService = client.service('entries');
 	let uiState = {
 		// display options
 		compactMode: false
