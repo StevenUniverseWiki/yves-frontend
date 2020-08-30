@@ -4,14 +4,14 @@
   "description": "Registros de chat de Steven Universe Wiki",
   "icons": [
     {
-      "src": "/favicon.png",
+      "src": "/assets/favicon.png",
       "type": "image/png",
       "sizes": "144x144"
     }
   ],
-  "start_url": "/",
+  "start_url": "",
   "background_color": "#f5f5f5",
   "display": "standalone",
-  "scope": "/",
+  "scope": "",
   "theme_color": "#000"
 }

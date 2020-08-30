@@ -1,6 +1,9 @@
 import svelte from 'vite-plugin-svelte';
 import preprocess from 'svelte-preprocess';
+import dotenv from 'dotenv';
 import { version } from './package.json';
+
+dotenv.config();
 
 export default {
   plugins: [
@@ -14,7 +17,10 @@ export default {
   outDir: './dist',
   assetsDir: 'build',
   env: {
-    VITE_YVES_VERSION: version
+    ...process.env,
+    ...{
+      VITE_YVES_VERSION: version
+    }
   },
   rollupDedupe: ['svelte'],
 };
