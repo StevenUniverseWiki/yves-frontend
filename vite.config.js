@@ -11,6 +11,7 @@ export default {
     })
   ],
   root: './src',
+  outDir: './dist',
   assetsDir: 'build',
   env: {
     VITE_YVES_VERSION: version
