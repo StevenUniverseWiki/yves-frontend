@@ -2,6 +2,7 @@
 	import ChatMessage from '../components/ChatMessage.svelte';
 	import SystemMessage from '../components/SystemMessage.svelte';
 	import CompactMessage from '../components/CompactMessage.svelte';
+	import Notification from '../components/Notification.svelte';
 
 	export let client, active;
 
@@ -21,12 +22,7 @@
 
 <main hidden={!active}>
 	<section class="liveChat">
-		<div class="notification is-info">
-			<span class="icon is-medium">
-				<ion-icon size="large" name="information-circle" role="img" class="md icon-large hydrated" aria-label="information circle"></ion-icon>
-			</span>
-			<span class="notif-message">Los nuevos eventos de chat aparecerán en tiempo real en esta página.</span>
-		</div>
+		<Notification type="info">Los nuevos eventos de chat aparecerán en tiempo real en esta página.</Notification>
 		<hr>
 		<div class="interface-options">
 			<label class="label">
@@ -60,11 +56,3 @@
 		</div>
 	</section>
 </main>
-
-<style>
-	.notif-message {
-	    position: relative;
-	    bottom: 10px !important;
-	    margin-left: 6px;
-	}
-</style>

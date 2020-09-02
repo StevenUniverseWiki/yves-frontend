@@ -7,7 +7,7 @@
 <nav class="navbar is-light" role="navigation" aria-label="main navigation">
 	<div class="navbar-brand">
 		<a class="navbar-item">
-			<img class="nav-logo" src="https://vignette.wikia.nocookie.net/universosteven/images/8/89/Wiki-wordmark.png/revision/latest/scale-to-width-down/100?cb=20200108003928&path-prefix=es" alt="Logo de Steven Universe Wiki" width="100" height="51">
+			<img class="nav-logo" src="https://vignette.wikia.nocookie.net/universosteven/images/8/89/Wiki-wordmark.png/revision/latest/scale-to-width-down/100?cb=20200108003928&path-prefix=es" width="100" height="51">
 			<strong>{title}</strong>
 		</a>
 

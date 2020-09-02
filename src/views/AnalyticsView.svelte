@@ -1,5 +1,6 @@
 <script>
 	import Chart from '../components/Chart.svelte';
+	import Notification from '../components/Notification.svelte';
 
 	export let active;
 
@@ -8,12 +9,7 @@
 
 <main hidden={!active}>
 	<section class="analytics">
-	<div class="notification is-info">
-		<span class="icon is-medium">
-			<ion-icon size="large" name="information-circle" role="img" class="md icon-large hydrated" aria-label="information circle"></ion-icon>
-		</span>
-		<span class="notif-message">Esta sección provee información sobre diferentes métricas de uso y rendimiento del chat en el tiempo, representadas como gráficos.</span>
-	</div>
+		<Notification type="info">Esta sección provee información sobre diferentes métricas de uso y rendimiento del chat en el tiempo, representadas como gráficos.</Notification>
 		<br />
 
 		<center>
@@ -28,11 +24,3 @@
 		</center>
 	</section>
 </main>
-
-<style>
-	.notif-message {
-	    position: relative;
-	    bottom: 10px !important;
-	    margin-left: 6px;
-	}
-</style>

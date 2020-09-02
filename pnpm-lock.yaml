@@ -1,17 +1,22 @@
 dependencies:
   '@feathersjs/feathers': 4.5.8
   '@feathersjs/socketio-client': 4.5.8
+  '@fortawesome/free-regular-svg-icons': 5.14.0
+  '@fortawesome/free-solid-svg-icons': 5.14.0
   axios: 0.20.0
-  date-fns: 2.16.0
+  bulma: 0.9.0
+  date-fns: 2.16.1
   socket.io-client: 2.3.0
+  svelte-fa: 2.1.1
 devDependencies:
+  '@fullhuman/postcss-purgecss': 2.3.0
   cross-env: 7.0.2
   dotenv: 8.2.0
   npm-run-all: 4.1.5
   postcss-load-config: 2.1.0
   sirv-cli: 1.0.6
   svelte: 3.24.1
-  svelte-preprocess: 4.1.2_494cb5a48091d2a3c6ba13b6be9b4c04
+  svelte-preprocess: 4.2.1_494cb5a48091d2a3c6ba13b6be9b4c04
   tailwindcss: 1.7.6
   vite: 1.0.0-rc.4
   vite-plugin-svelte: 2.4.1_svelte@3.24.1+vite@1.0.0-rc.4
@@ -96,6 +101,28 @@ packages:
       node: '>= 10'
     resolution:
       integrity: sha512-feECInVjgXdNxlXImdhB72+4Q89G4NXQTXcBmtGmI7tJtDFN+5cak23t7vp2EvNUlwexaYGL3DZMVD/KxYU3yA==
+  /@fortawesome/fontawesome-common-types/0.2.30:
+    dev: false
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-TsRwpTuKwFNiPhk1UfKgw7zNPeV5RhNp2Uw3pws+9gDAkPGKrtjR1y2lI3SYn7+YzyfuNknflpBA1LRKjt7hMg==
+  /@fortawesome/free-regular-svg-icons/5.14.0:
+    dependencies:
+      '@fortawesome/fontawesome-common-types': 0.2.30
+    dev: false
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-6LCFvjGSMPoUQbn3NVlgiG4CY5iIY8fOm+to/D6QS/GvdqhDt+xZklQeERdCvVRbnFa1ITc1rJHPRXqkX5wztQ==
+  /@fortawesome/free-solid-svg-icons/5.14.0:
+    dependencies:
+      '@fortawesome/fontawesome-common-types': 0.2.30
+    dev: false
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-M933RDM8cecaKMWDSk3FRYdnzWGW7kBBlGNGfvqLVwcwhUPNj9gcw+xZMrqBdRqxnSXdl3zWzTCNNGEtFUq67Q==
   /@fullhuman/postcss-purgecss/2.3.0:
     dependencies:
       postcss: 7.0.32
@@ -603,6 +630,10 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-k0KL0aWZuBt2lrxrcASWDfwOLMnodeQjodT/1SxEQAXsHANgo6ZC/VEaSEHCXt7aSTZ4/4H5LKa+tBXmW7Vtvw==
+  /bulma/0.9.0:
+    dev: false
+    resolution:
+      integrity: sha512-rV75CJkubNUroAt0qCRkjznZLoaXq/ctfMXsMvKSL84UetbSyx5REl96e8GoQ04G4Tkw0XF3STECffTOQrbzOQ==
   /bytes/3.1.0:
     dev: true
     engines:
@@ -903,12 +934,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-ul26pfSQTZW8dcOnD2iiJssfXw0gdNVX9IJDH/X3K5DGPfj+fUYe3kB+swUY6BF3oZDxaID3AJt+9/ojSAE05A==
-  /date-fns/2.16.0:
+  /date-fns/2.16.1:
     dev: false
     engines:
       node: '>=0.11'
     resolution:
-      integrity: sha512-DWTRyfOA85sZ4IiXPHhiRIOs3fW5U6Msrp+gElXARa6EpoQTXPyHQmh7hr+ssw2nx9FtOQWnAMJKgL5vaJqILw==
+      integrity: sha512-sAJVKx/FqrLYHAQeN7VpJrPhagZc9R4ImZIWYRFZaaohR3KzmuK88touwsSwSVT8Qcbd4zoDsnGfX4GFB4imyQ==
   /debug/3.1.0:
     dependencies:
       ms: 2.0.0
@@ -2445,15 +2476,13 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==
-  /rollup-plugin-dynamic-import-variables/1.1.0_rollup@2.26.8:
+  /rollup-plugin-dynamic-import-variables/1.1.0:
     dependencies:
       '@rollup/pluginutils': 3.1.0_rollup@2.26.8
       estree-walker: 2.0.1
       globby: 11.0.1
       magic-string: 0.25.7
     dev: true
-    peerDependencies:
-      rollup: '*'
     resolution:
       integrity: sha512-C1avEmnXC8cC4aAQ5dB63O9oQf7IrhEHc98bQw9Qd6H36FxtZooLCvVfcO4SNYrqaNrzH3ErucQt/zdFSLPHNw==
   /rollup-plugin-svelte/6.0.0_svelte@3.24.1:
@@ -2793,6 +2822,10 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==
+  /svelte-fa/2.1.1:
+    dev: false
+    resolution:
+      integrity: sha512-Oj563sJH0eLo6Pd1MsALgx5if9qKHtfCrMY5elMzggu00fP9zM47Vcv2b92g5vc+FNodxKPHhkUFTI8KK8CwGA==
   /svelte-hmr/0.10.3_svelte@3.24.1:
     dependencies:
       svelte: 3.24.1
@@ -2801,7 +2834,7 @@ packages:
       svelte: '>=3.19.0'
     resolution:
       integrity: sha512-s90yAPnfGE6rTbq9Vvq73z1XqLJ2qGw0VjorpwKfDZRIsB0/Ozu+uF5cyC1fS3dCyQcS2sZDMt4zQ/qDjDwa/Q==
-  /svelte-preprocess/4.1.2_494cb5a48091d2a3c6ba13b6be9b4c04:
+  /svelte-preprocess/4.2.1_494cb5a48091d2a3c6ba13b6be9b4c04:
     dependencies:
       '@types/pug': 2.0.4
       '@types/sass': 1.16.0
@@ -2849,7 +2882,7 @@ packages:
         optional: true
     requiresBuild: true
     resolution:
-      integrity: sha512-l665fccStg1W2BlD0MUfFLmbTCd2tIsSvj18IzfyAoJ46sZqqeT8DPuqpNyIJ//zvRZl2g7aHNzqYAH8FOCEqg==
+      integrity: sha512-iagQGcKgCwlSKcKJ2GA3SznjWKwz4Q4yAkYdVMvgE8hQ+vTlvjjRcpCo/9P7u+otr5DLG16PPMwgVQZ3h51cKQ==
   /svelte/3.24.1:
     dev: true
     engines:
@@ -3049,7 +3082,7 @@ packages:
       postcss-load-config: 2.1.0
       resolve: 1.17.0
       rollup: 2.26.8
-      rollup-plugin-dynamic-import-variables: 1.1.0_rollup@2.26.8
+      rollup-plugin-dynamic-import-variables: 1.1.0
       rollup-plugin-terser: 5.3.0_rollup@2.26.8
       rollup-plugin-vue: 6.0.0-beta.10_@vue+compiler-sfc@3.0.0-rc.9
       rollup-plugin-web-worker-loader: 1.3.1_rollup@2.26.8
@@ -3147,16 +3180,21 @@ packages:
 specifiers:
   '@feathersjs/feathers': ^4.5.8
   '@feathersjs/socketio-client': ^4.5.8
+  '@fortawesome/free-regular-svg-icons': ^5.14.0
+  '@fortawesome/free-solid-svg-icons': ^5.14.0
+  '@fullhuman/postcss-purgecss': ^2.3.0
   axios: ^0.20.0
+  bulma: ^0.9.0
   cross-env: ^7.0.2
-  date-fns: ^2.16.0
+  date-fns: ^2.16.1
   dotenv: ^8.2.0
   npm-run-all: ^4.1.5
   postcss-load-config: ^2.1.0
   sirv-cli: ^1.0.6
   socket.io-client: ^2.3.0
   svelte: ^3.24.1
-  svelte-preprocess: ^4.1.2
+  svelte-fa: ^2.1.1
+  svelte-preprocess: ^4.2.1
   tailwindcss: ^1.7.6
   vite: ^1.0.0-rc.4
   vite-plugin-svelte: ^2.4.1

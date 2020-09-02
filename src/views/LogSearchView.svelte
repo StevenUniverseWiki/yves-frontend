@@ -2,6 +2,10 @@
 	import ChatMessage from '../components/ChatMessage.svelte';
 	import SystemMessage from '../components/SystemMessage.svelte';
 	import CompactMessage from '../components/CompactMessage.svelte';
+	import Notification from '../components/Notification.svelte';
+
+	import Fa from 'svelte-fa';
+	import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 	export let client, active;
 
@@ -48,6 +52,8 @@
 		compactMode: false,
 
 	}
+
+	let searchTop = null;
 
 	function buildSearchQuery() {
 		let searchQuery = {};
@@ -127,7 +133,7 @@
 		uiState.prevLoading = true;
 		sendQuery().then(() => {
 			uiState.prevLoading = false;
-			document.getElementById("searchTop").scrollIntoView();
+			searchTop.scrollIntoView();
 		});
 	}
 
@@ -136,7 +142,7 @@
 		uiState.nextLoading = true;
 		sendQuery().then(() => {
 			uiState.nextLoading = false;
-			document.getElementById("searchTop").scrollIntoView();
+			searchTop.scrollIntoView();
 		});
 	}
 
@@ -150,12 +156,7 @@
 
 <main hidden={!active}>
 	<section class="logSearchInterface">
-		<div class="notification is-info">
-			<span class="icon is-medium">
-				<ion-icon size="large" name="information-circle" role="img" class="md icon-large hydrated" aria-label="information circle"></ion-icon>
-			</span>
-			<span class="notif-message">Todos los horarios son mostrados en horario del wiki (UTC).</span>
-		</div>
+		<Notification type="info">Todos los horarios son mostrados en horario del wiki (UTC).</Notification>
 		<hr>
 		<form>
 			<div class="field">
@@ -232,7 +233,7 @@
 						<div class="control has-icons-left">
 							<input class="input" id="users" type="text" name="users" bind:value={uiState.usernameField}>
 							<span class="icon is-small is-left">
-								<ion-icon size="large" name="person"></ion-icon>
+								<Fa size="lg" icon={faUser} />
 							</span>
 						</div>
 					</div>
@@ -247,7 +248,7 @@
 						<div class="control has-icons-left">
 							<input class="input" id="targets" type="text" name="targets" bind:value={uiState.targetUserField}>
 							<span class="icon is-small is-left">
-								<ion-icon size="large" name="person"></ion-icon>
+								<Fa size="lg" icon={faUser} />
 							</span>						      	
 						</div>
 					</div>
@@ -343,28 +344,18 @@
 	{/if}
 
 	{#if uiState.noResults}
-		<div class="notification is-info">
-			<span class="icon is-medium">
-				<ion-icon size="large" name="information-circle" role="img" class="md icon-large hydrated" aria-label="information circle"></ion-icon>
-			</span>
-			<span class="notif-message">La consulta no devolvió resultados.</span>
-		</div>
+		<Notification type="info">La consulta no devolvió resultados.</Notification>
 	{/if}
 
 	{#if entries.length}
-		<div class="notification is-success">
-			<span class="icon is-medium">
-				<ion-icon size="large" name="information-circle" role="img" class="md icon-large hydrated" aria-label="information circle"></ion-icon>
-			</span>
-			<span class="notif-message">La consulta devolvió {resultCount} resultados.</span>
-		</div>
+		<Notification type="success">La consulta devolvió {resultCount} resultados.</Notification>
 		<div class="interface-options">
 			<label class="label">
 			<input class="checkbox" type="checkbox" bind:checked={uiState.compactMode}>
 			Modo compacto (útil al copiar varios mensajes)
 			</label>
 
-			<nav class="pagination is-centered" role="navigation" aria-label="pagination" id="searchTop">
+			<nav class="pagination is-centered" role="navigation" aria-label="pagination" bind:this={searchTop}>
 			  <button class="button pagination-previous" class:is-loading={uiState.prevLoading} on:click={paginationPrevious} disabled={uiState.prevDisabled}>Anterior</button>
 			  <button class="button pagination-next" class:is-loading={uiState.nextLoading} on:click={paginationNext} disabled={uiState.nextDisabled}>Siguiente</button>
 			</nav>
@@ -397,19 +388,3 @@
 	{/if}
 	<br />
 </main>
-
-<style>
-	.notif-message {
-	    position: relative;
-	    bottom: 10px !important;
-	    margin-left: 6px;
-	}
-	.modal {
-		padding-left: 0.6rem;
-		padding-right: 0.6rem;
-	}
-	.modal-card {
-		border-radius: 6px;
-	}
-</style>
-
