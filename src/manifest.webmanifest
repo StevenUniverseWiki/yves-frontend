@@ -4,14 +4,14 @@
   "description": "Registros de chat de Steven Universe Wiki",
   "icons": [
     {
-      "src": "/assets/favicon.png",
+      "src": "https://suw-chatlogs.thenozomi.cf/build/favicon.60f16c61.png",
       "type": "image/png",
       "sizes": "144x144"
     }
   ],
-  "start_url": "",
+  "start_url": "https://suw-chatlogs.thenozomi.cf/",
   "background_color": "#f5f5f5",
   "display": "standalone",
-  "scope": "",
+  "scope": "https://suw-chatlogs.thenozomi.cf/",
   "theme_color": "#000"
 }

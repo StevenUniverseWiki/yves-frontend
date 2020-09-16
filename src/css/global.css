@@ -1,9 +1,9 @@
 .section {
-  padding: 0.8rem 1.5rem;
+    padding: 0 1.5rem !important;
 }
 
 .tabs {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .tabs ul {
