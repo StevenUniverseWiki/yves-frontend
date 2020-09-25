@@ -9,7 +9,7 @@ dependencies:
   qs: 6.9.4
   socket.io-client: 2.3.0
   vue: 3.0.0
-  vue-highcharts: github.com/weizhenye/vue-highcharts/e27927b7aea2eaf15e45b6fd2a86d0d482b79967_highcharts@8.2.0+vue@3.0.0
+  vue-highcharts: 0.2.0_highcharts@8.2.0+vue@3.0.0
   vue-router: 4.0.0-beta.9_vue@3.0.0
 devDependencies:
   '@vue/compiler-sfc': 3.0.0_vue@3.0.0
@@ -2512,6 +2512,16 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-D9gpKKaE2U0YpIxNrSn+nlFPBT0sfg68Y1EReYW8YHMhbNFcxwS7RZIa1W/8Pq6yDfVRAhbOZNijv1mLG5pCEg==
+  /vue-highcharts/0.2.0_highcharts@8.2.0+vue@3.0.0:
+    dependencies:
+      highcharts: 8.2.0
+      vue: 3.0.0
+    dev: false
+    peerDependencies:
+      highcharts: '>=4.2.0'
+      vue: '>=3'
+    resolution:
+      integrity: sha512-+zXI/ei3KgpVuEreyeTsvLIp092m+03JtTwg6gj7DxtjJqi4LhYvV/rBnUoaXuvqTsiPNwPBPKeyiATL9iM2Gw==
   /vue-router/4.0.0-beta.9_vue@3.0.0:
     dependencies:
       vue: 3.0.0
@@ -2595,20 +2605,6 @@ packages:
       node: '>= 4.0.0'
     resolution:
       integrity: sha512-faQrqNMzcPCHGVC2aaOINk13K+aaBDUPjGWl0teOXywElLjyVAB6Oe2jj62jHYtwsU49jXhScYbvPENK+6zAvQ==
-  github.com/weizhenye/vue-highcharts/e27927b7aea2eaf15e45b6fd2a86d0d482b79967_highcharts@8.2.0+vue@3.0.0:
-    dependencies:
-      highcharts: 8.2.0
-      vue: 3.0.0
-    dev: false
-    id: github.com/weizhenye/vue-highcharts/e27927b7aea2eaf15e45b6fd2a86d0d482b79967
-    name: vue-highcharts
-    peerDependencies:
-      highcharts: '>=4.2.0'
-      vue: '>=3'
-    resolution:
-      registry: 'https://registry.npmjs.org/'
-      tarball: 'https://codeload.github.com/weizhenye/vue-highcharts/tar.gz/e27927b7aea2eaf15e45b6fd2a86d0d482b79967'
-    version: 0.1.0
 specifiers:
   '@feathersjs/feathers': ^4.5.8
   '@feathersjs/socketio-client': ^4.5.8
@@ -2625,5 +2621,5 @@ specifiers:
   socket.io-client: ^2.3.0
   vite: ^1.0.0-rc.4
   vue: '3'
-  vue-highcharts: 'github:weizhenye/vue-highcharts#next'
+  vue-highcharts: ^0.2.0
   vue-router: ^4.0.0-beta.9
