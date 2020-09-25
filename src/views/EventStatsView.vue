@@ -1,14 +1,14 @@
 <template>
   <section class="EventStatsView container">
-    <h2 class="subtitle is-4">Tabla de clasificación</h2>
-    <table class="table is-striped is-fullwidth is-hoverable">
+    <h2 id="ranking-table-title" class="subtitle is-4">Tabla de clasificación</h2>
+    <table class="table is-striped is-fullwidth is-hoverable" aria-describedby="ranking-table-title">
       <thead>
         <tr>
-          <th>#</th>
-          <th>Usuario</th>
-          <th>Puntos</th>
-          <th>Vidas restantes</th>
-          <th>Desafíos especiales</th>
+          <th scope="col"><abbr title="Puesto">#</abbr></th>
+          <th scope="col">Usuario</th>
+          <th scope="col">Puntos</th>
+          <th scope="col">Vidas restantes</th>
+          <th scope="col">Desafíos especiales</th>
         </tr>
       </thead>
       <tbody>
@@ -30,7 +30,7 @@
       <ul>
         <li>Todos los usuarios que participen en el chat al momento de iniciado (y luego de iniciado) el evento, participarán automáticamente en él.</li>
         <li>Por cada mensaje enviado, el participante ganará una cantidad aleatoria de puntos entre 2 y 4 (inclusive), los cuales constituirán el puntaje básico. Para prevenir los mensajes spam con el solo objetivo de sumar puntos, después de haber ganado puntos, se establece un temporizador que durante los próximos 10 segundos le impide volver a ganar puntos.</li>
-        <li>Todos los usuarios iniciarán con un balance de puntos <b>0</b> (cero) y <b>3</b> (tres) "vidas". En diferentes circunstancias (las cuales se explicarán a continuación), el usuario podrá perder vidas. Si llegase a 0 vidas, quedará descalificado del evento, es decir, si bien seguirá formando parte de la tabla de clasificación, no podrá ganar puntos de ningún modo.</li>
+        <li>Todos los usuarios iniciarán con un balance de puntos <strong>0</strong> (cero) y <strong>3</strong> (tres) "vidas". En diferentes circunstancias (las cuales se explicarán a continuación), el usuario podrá perder vidas. Si llegase a 0 vidas, quedará descalificado del evento, es decir, si bien seguirá formando parte de la tabla de clasificación, no podrá ganar puntos de ningún modo.</li>
 
       </ul><br />
       <h2 class="subtitle is-5">Desafíos especiales</h2>
@@ -40,13 +40,13 @@
       </ul>
     </div>
     <hr>
-    <h2 class="subtitle is-4">Comandos</h2>
-    <table class="table is-striped is-fullwidth is-hoverable">
+    <h2 id="commands-table-title" class="subtitle is-4">Comandos</h2>
+    <table class="table is-striped is-fullwidth is-hoverable" aria-describedby="commands-table-title">
       <thead>
         <tr>
-          <th>Comando</th>
-          <th>Descripción</th>
-          <th>Ejemplo</th>
+          <th scope="col">Comando</th>
+          <th scope="col">Descripción</th>
+          <th scope="col">Ejemplo</th>
         </tr>
       </thead>
       <tbody>
@@ -72,7 +72,7 @@
         </tr>
         <tr>
           <td>!leave</td>
-          <td>Permite salir voluntariamente del evento, dejando de recibir puntos por mensajes y de ser elegible para los desafíos especiales. <b>Este comando no solicita confirmación</b>, por lo cual se recomienda discreción si se desea usar.</td>
+          <td>Permite salir voluntariamente del evento, dejando de recibir puntos por mensajes y de ser elegible para los desafíos especiales. <strong>Este comando no solicita confirmación</strong>, por lo cual se recomienda discreción si se desea usar.</td>
           <td></td>
         </tr>
       </tbody>

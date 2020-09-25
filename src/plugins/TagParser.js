@@ -201,7 +201,7 @@ const ChatTags = {
     }
 };
 
-const parse = (s) => {
+const TagParser = (s) => {
     s = escape(s);
     let t = s.match(/\[([^\[\];]*)\]/g);
     let tg = '';
@@ -220,4 +220,4 @@ const parse = (s) => {
     return s;
 };
 
-export default parse;
+export default TagParser;

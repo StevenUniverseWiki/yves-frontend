@@ -34,13 +34,6 @@
       <LiveChatView v-show="activeTab === 'live-chat'" />
       <EventStatsView v-show="activeTab === 'event-stats'" />
       <AnalyticsView v-if="analyticsLoaded" v-show="activeTab === 'analytics'" />
-      <!--
-        <router-view v-slot="{Component}">
-          <keep-alive>
-             <component :is="Component" />
-          </keep-alive>
-        </router-view>
-      -->
     </div>
   </section>
   <Footer />

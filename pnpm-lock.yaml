@@ -10,7 +10,6 @@ dependencies:
   socket.io-client: 2.3.0
   vue: 3.0.0
   vue-highcharts: 0.2.0_highcharts@8.2.0+vue@3.0.0
-  vue-router: 4.0.0-beta.9_vue@3.0.0
 devDependencies:
   '@vue/compiler-sfc': 3.0.0_vue@3.0.0
   cross-env: 7.0.2
@@ -2522,14 +2521,6 @@ packages:
       vue: '>=3'
     resolution:
       integrity: sha512-+zXI/ei3KgpVuEreyeTsvLIp092m+03JtTwg6gj7DxtjJqi4LhYvV/rBnUoaXuvqTsiPNwPBPKeyiATL9iM2Gw==
-  /vue-router/4.0.0-beta.9_vue@3.0.0:
-    dependencies:
-      vue: 3.0.0
-    dev: false
-    peerDependencies:
-      vue: ^3.0.0-rc.9
-    resolution:
-      integrity: sha512-k8AGMm3LCTqnsEuF37AD4kcZVMwtnFEzdjACgmIII/xbLnTj3+o5XyH/zREBZutgv5q2hzlLltMVglqDQYMd/A==
   /vue/3.0.0:
     dependencies:
       '@vue/compiler-dom': 3.0.0
@@ -2622,4 +2613,3 @@ specifiers:
   vite: ^1.0.0-rc.4
   vue: '3'
   vue-highcharts: ^0.2.0
-  vue-router: ^4.0.0-beta.9

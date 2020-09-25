@@ -171,7 +171,7 @@
           <button type="button" class="delete" aria-label="close" @click="toggleQueryModal"></button>
         </header>
         <section class="modal-card-body">
-          Este es el <i>objeto query</i> para la consulta construida con el formulario:
+          Este es el <em>objeto query</em> para la consulta construida con el formulario:
           <br /><br />
           <pre>{{JSON.stringify(this.searchQuery, null, 3)}}</pre>
         </section>

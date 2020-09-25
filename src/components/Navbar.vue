@@ -2,7 +2,7 @@
   <nav class="navbar is-light" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item">
-        <img class="nav-logo" src="../assets/wordmark.png" width="100" height="51">
+        <img class="nav-logo" src="../assets/wordmark.png" alt="Logo de Steven Universe Wiki" width="100" height="51">
         <strong>{{ title }}</strong>
       </a>
 

@@ -9,11 +9,11 @@
       <br />
       <div class="msg-content">
         <template v-if="deleted">
-          <ion-icon name="trash" /> <i>Este elemento ha sido eliminado. Razón: {deletionReason}</i>
+          <ion-icon name="trash" /> <em>Este elemento ha sido eliminado. Razón: {deletionReason}</em>
         </template>
         <template v-else>
           <template v-if="isRoleplay">
-            <i>* {{username}} <span v-html="this.parseTags(this.message)" /></i>
+            <em>* {{username}} <span v-html="this.parseTags(this.message)" /></em>
           </template>
           <span v-else v-html="this.parseTags(this.message)" />
         </template>

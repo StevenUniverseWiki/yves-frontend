@@ -3,14 +3,14 @@
     <div class="media-content">
       <small> [{{formattedTimestamp}}] </small>
       <template v-if="deleted">
-        <strong>&lt;{{user}}&gt;</strong>: <ion-icon name="trash" /> <i>[Este elemento ha sido eliminado. Razón: {{deletionReason}}]</i>
+        <strong>&lt;{{user}}&gt;</strong>: <ion-icon name="trash" /> <em>[Este elemento ha sido eliminado. Razón: {{deletionReason}}]</em>
       </template>
       <template v-else>
         <template v-if="event === 'MESSAGE'">
           <strong>&lt;{{user}}&gt;</strong>: <span v-html="this.parseTags(this.text)" />
         </template>
         <template v-else-if="event === 'ME'">
-          <strong>&lt;{{user}}&gt;</strong>: <i>* {{user}} <span v-html="this.parseTags(this.text)" /></i>
+          <strong>&lt;{{user}}&gt;</strong>: <em>* {{user}} <span v-html="this.parseTags(this.text)" /></em>
         </template>
         <template v-else-if="event === 'JOIN'">
           ~ {{user}} ha entrado al chat. ~

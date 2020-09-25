@@ -3,7 +3,7 @@
     <div class="media-content message-text">
       <small> [{{formattedTimestamp}}] </small>
       <template v-if="deleted">
-        <ion-icon name="trash" /> <i>[Este elemento ha sido eliminado. Razón: {{deletionReason}}]</i>
+        <ion-icon name="trash" /> <em>[Este elemento ha sido eliminado. Razón: {{deletionReason}}]</em>
       </template>
       <template v-else>
         <template v-if="event === 'JOIN'">
