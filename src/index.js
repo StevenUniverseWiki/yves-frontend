@@ -55,10 +55,9 @@ import feathers from '@feathersjs/feathers';
 import socketio from '@feathersjs/socketio-client';
 import VueFeathers from './plugins/feathers.js';
 
-const socket = io(import.meta.env.DEV ? 'http://localhost:3030': import.meta.env.VITE_YVES_API);
+const socket = io(import.meta.env.VITE_YVES_API);
 const client = feathers();
 client.configure(socketio(socket));
 app.use(VueFeathers, {client: client});
-
 
 app.mount('#app');
