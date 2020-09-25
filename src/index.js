@@ -1,16 +1,22 @@
-import App from './App.svelte';
-// import './index.css';
+import { createApp } from 'vue';
+import App from './App.vue';
+import 'bulma/css/bulma.css';
+import './css/global.css';
 
-const app = new App({
-  target: document.getElementById('app')
-});
+// global components
+import Notification from './components/Notification.vue';
 
-export default app;
+const app = createApp(App);
+app.component('Notification', Notification);
 
-// Hot Module Replacement (HMR)
-if (import.meta.hot) {
-  import.meta.hot.accept();
-  import.meta.hot.dispose(() => {
-    app.$destroy();
-  });
-}
+import io from 'socket.io-client';
+import feathers from '@feathersjs/feathers';
+import socketio from '@feathersjs/socketio-client';
+import VueFeathers from './plugins/feathers.js';
+
+const socket = io(import.meta.env.VITE_YVES_API || 'http://localhost:3030');
+const client = feathers();
+client.configure(socketio(socket));
+app.use(VueFeathers, {client: client});
+
+app.mount('#app');

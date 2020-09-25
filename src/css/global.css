@@ -1,0 +1,22 @@
+.section {
+    padding: 0 1.5rem !important;
+}
+
+.tabs {
+  margin-top: 20px;
+}
+
+.tabs ul {
+  flex-shrink: 1;
+  flex-wrap: wrap;
+  border-bottom-color: transparent;
+}
+
+.modal {
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+}
+
+.modal-card {
+  border-radius: 6px;
+}
