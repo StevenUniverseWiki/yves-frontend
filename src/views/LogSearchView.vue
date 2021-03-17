@@ -77,7 +77,7 @@
             <div class="control has-icons-left">
               <input class="input" id="users" type="text" name="users" v-model="uiState.usernameField">
               <span class="icon is-small is-left">
-                <ion-icon size="large" name="person" />
+                <i-ion:person />
               </span>
             </div>
           </div>
@@ -92,7 +92,7 @@
             <div class="control has-icons-left">
               <input class="input" id="targets" type="text" name="targets" v-model="uiState.targetUserField">
               <span class="icon is-small is-left">
-                <ion-icon size="large" name="person" />
+                <i-ion:person />
               </span>                             
             </div>
           </div>
@@ -173,7 +173,7 @@
         <section class="modal-card-body">
           Este es el <em>objeto query</em> para la consulta construida con el formulario:
           <br /><br />
-          <pre>{{JSON.stringify(this.searchQuery, null, 3)}}</pre>
+          <pre>{{JSON.stringify(searchQuery, null, 3)}}</pre>
         </section>
       </div>
     </div>
@@ -193,7 +193,7 @@
       </div>
       <hr>
       <ul class="entries">
-        <li v-for="entry in entries">
+        <li v-for="entry in entries" :key="entry._id">
           <CompactMessage v-if="uiState.compactMode" v-bind="entry" />
           <template v-else>
             <ChatMessage

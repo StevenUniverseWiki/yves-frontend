@@ -3,7 +3,7 @@
     <div class="media-content message-text">
       <small> [{{formattedTimestamp}}] </small>
       <template v-if="deleted">
-        <ion-icon name="trash" /> <em>[Este elemento ha sido eliminado. Razón: {{deletionReason}}]</em>
+        <i-ion:trash /> <em>[Este elemento ha sido eliminado. Razón: {{deletionReason}}]</em>
       </template>
       <template v-else>
         <template v-if="event === 'JOIN'">
@@ -42,27 +42,22 @@
       deleted: Boolean,
       deletionReason: String
     },
-    data() {
-      return {
-        banExpiry: null
-      }
-    },
-    beforeUpdate() {
-      if (this.event === 'BAN')
-        this.banExpiry = addSeconds(new Date(this.timestamp), this.banLength);
-    },
-    computed: {
-      formattedTimestamp() {
-        return lightFormat(addMinutes(new Date(this.timestamp), new Date(this.timestamp).getTimezoneOffset()), "dd/MM/yyyy, h:mm:ss aa", {
-          locale: es
-        });
-      },
-      formattedBanLength() {
-        if (!this.banLength) return 0;
-        return formatDistance(new Date(this.banExpiry), new Date(this.timestamp), {
+    setup(props) {
+      const formattedTimestamp = lightFormat(addMinutes(new Date(props.timestamp), new Date(props.timestamp).getTimezoneOffset()), "dd/MM/yyyy, h:mm:ss aa", {
+        locale: es
+      });
+
+      let formattedBanLength = null;
+      if (props.event === 'BAN') {
+        const banExpiry = addSeconds(new Date(props.timestamp), props.banLength);
+        formattedBanLength = formatDistance(new Date(banExpiry), new Date(props.timestamp), {
           locale: es
         });
       }
+
+      const parsedMessage = props.text ? TagParser(props.text) : props.text;
+
+      return { formattedBanLength, formattedTimestamp, parsedMessage }
     }
   }
 </script>

@@ -1,7 +1,12 @@
 <template>
   <div :class="notificationClasses">
-    <button v-if="dismissible" class="delete" @click="this.$emit('dismiss')"></button>
-    <span class="icon is-medium"><ion-icon size="large" :name="iconName" /></span>
+    <button v-if="dismissible" class="delete" @click="$emit('dismiss')"></button>
+    <span class="icon is-medium">
+      <i-ion:checkmark-circle v-if="type === 'success'" />
+      <i-ion:alert-circle v-else-if="type === 'warn'" />
+      <i-ion:bug v-else-if="type === 'danger'" />
+      <i-ion:information-circle v-else />
+    </span>
     <span class="notif-message"><slot /></span>
   </div>
 </template>
@@ -17,23 +22,6 @@ export default {
   computed: {
     notificationClasses() {
       return ['notification', 'is-light', `is-${this.type}`];
-    },
-    iconName() {
-      switch (this.type) {
-        case 'success': {
-          return 'checkmark-circle';
-        }
-        case 'warn': {
-          return 'alert-circle';
-        }
-        case 'danger': {
-          return 'bug';
-        }
-        case 'info':
-        default: {
-          return 'information-circle';
-        }
-      }
     }
   }
 }
@@ -48,5 +36,6 @@ export default {
   }
   .notification > .icon {
     margin-right: 0.4em;
+    font-size: 1.4em;
   }
 </style>

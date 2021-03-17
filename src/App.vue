@@ -6,26 +6,14 @@
         <ul>
           <li :class="{'is-active': activeTab === 'logs'}">
             <a @click="switchTab('logs')">
-              <span class="icon is-small"><ion-icon name="document-text-outline" /></span>
+              <span class="icon is-small"><i-ion:document-text-outline /></span>
               <span>Buscar mensajes</span>
-            </a>
-          </li>
-          <li :class="{'is-active': activeTab === 'live-chat'}">
-            <a @click="switchTab('live-chat')">
-              <span class="icon is-small"><ion-icon name="chatbubbles-outline" /></span>
-              <span>Chat en directo</span>
             </a>
           </li>
           <li :class="{'is-active': activeTab === 'event-stats'}">
             <a @click="switchTab('event-stats')">
-              <span class="icon is-small"><ion-icon name="star-outline" /></span>
+              <span class="icon is-small"><i-ion:star-outline /></span>
               <span>Evento</span>
-            </a>
-          </li>
-          <li :class="{'is-active': activeTab === 'analytics'}">
-            <a @click="switchTab('analytics')">
-              <span class="icon is-small"><ion-icon name="analytics-outline" /></span>
-              <span>Estadísticas</span>
             </a>
           </li>
         </ul>
@@ -33,7 +21,6 @@
       <LogSearchView v-show="activeTab === 'logs'"/>
       <LiveChatView v-show="activeTab === 'live-chat'" />
       <EventStatsView v-show="activeTab === 'event-stats'" />
-      <AnalyticsView v-if="analyticsLoaded" v-show="activeTab === 'analytics'" />
     </div>
   </section>
   <Footer />
@@ -41,9 +28,7 @@
 
 <script>
   import LogSearchView from './views/LogSearchView.vue';
-  import LiveChatView from './views/LiveChatView.vue';
   import EventStatsView from './views/EventStatsView.vue';
-  import AnalyticsView from './views/AnalyticsView.vue';
 
   import Navbar from './components/Navbar.vue';
   import Footer from './components/Footer.vue';
@@ -54,9 +39,7 @@
       Navbar,
       Footer,
       LogSearchView,
-      LiveChatView,
-      EventStatsView,
-      AnalyticsView
+      EventStatsView
     },
     data() {
       return {

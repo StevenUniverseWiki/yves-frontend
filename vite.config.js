@@ -1,21 +1,22 @@
-import dotenv from 'dotenv';
+import { defineConfig } from 'vite';
+import Vue from '@vitejs/plugin-vue';
+import Components from 'vite-plugin-components';
+import ViteIcons, { ViteIconsResolver } from 'vite-plugin-icons';
 import { version } from './package.json';
 
-dotenv.config();
+process.env = {...process.env, ...{
+  VITE_YVES_VERSION: version
+}}
 
-export default {
-  root: './src',
-  outDir: './dist',
-  assetsDir: 'build',
-  env: {
-    ...process.env,
-    ...{
-      VITE_YVES_VERSION: version
-    }
-  },
-  vueCompilerOptions: {
-    isCustomElement: tag => {
-      return tag.startsWith('ion-');
-    }
+export default defineConfig({
+  plugins: [
+    Vue(),
+    Components({
+      customComponentResolvers: ViteIconsResolver(),
+    }),
+    ViteIcons()
+  ],
+  server: {
+    port: 3031
   }
-};
+})
