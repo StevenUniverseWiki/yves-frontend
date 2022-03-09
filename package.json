@@ -13,7 +13,7 @@
   "dependencies": {
     "@feathersjs/feathers": "^4.5.11",
     "@feathersjs/socketio-client": "^4.5.11",
-    "axios": "^0.21.0",
+    "axios": "^0.26.1",
     "bulma": "^0.9.2",
     "date-fns": "^2.19.0",
     "highcharts": "^9.0.1",
