@@ -24,7 +24,7 @@
     "vue-highcharts": "^0.2.0"
   },
   "devDependencies": {
-    "@iconify/json": "^1.1.317",
+    "@iconify/json": "^2.1.69",
     "@vitejs/plugin-vue": "^1.1.5",
     "@vue/compiler-sfc": "^3.0.7",
     "cross-env": "^7.0.3",
